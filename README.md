@@ -3,6 +3,8 @@ Download and install data for course modules
 
 ## Installation
 
+### System wide installs
+
 1. Install `python`
 
     I assume you already have python installed on your computer. However this is probably python-2.7 which is no longer supported. Follow this link to download/install the latest version of `python`: https://www.python.org/downloads/
@@ -12,14 +14,7 @@ Download and install data for course modules
     It's likely that this has also already been installed on your computer. 
     If it hasn't, just follow the instructions here: https://github.com/git-guides/install-git
 
-1. Download latest course content from GitHub
-
-    This will create a local repository (existing locally on your computer) which contains all the course modules.
-
-        git clone https://github.com/robs84/QC_Course_Dev.git
-        cd QC_Course_Dev
-
-2. Create virtual environment 
+1. Install `virtualenv`
 
     Virtual environments make it easy to manage multiple python projects. Imagine that you have two projects, A and B. 
     Project A requires NumPy (v1.17.2) whereas Project B requires NumPy (v1.22.0).
@@ -36,27 +31,37 @@ Download and install data for course modules
     Either can work, but for this class we will use virtualenv. Install `virtualenv` by typing:
         
         python -m pip install --user virtualenv
-      
-    With `virtualenv` installed, we can now create a virtual environment inside of our current directory.
+
+### Course Material Install/Setup
+
+3. Download latest course content from GitHub. This will create a local repository (existing locally on your computer) which contains all the course modules.
+
+        git clone https://github.com/robs84/QC_Course_Dev.git
+        
+    Change directory (`cd`) into the new folder.
+    
+        cd QC_Course_Dev
+
+2. Create virtual environment. With `virtualenv` installed as described above, we can now create a virtual environment inside of our current directory:
         
         virtualenv -p python3 venv
         
-    Now we will *activate* the environment so that when we type `python` it will use our new environment.
+    Now we will *activate* the environment so that when we type `python` it will use this new environment.
     
         source venv/bin/activate
         
-    At this point, any software or packages we install with `pip` will be installed into the environment contained in the `/venv` directory. 
+    At this point, any software or packages we install with the `pip` command will be installed into the environment contained in the `./venv` directory. 
+    
     > Tips: 
-     
-     Should we want to deactivate the environment, simply type `deactivate`. 
-     Also, if you want to delete the environment and start over, you can just remove the `venv` folder, and all the downloaded packages are gone!
+          Should we want to deactivate the environment, simply type `deactivate`. 
+            Also, if you want to delete the environment and start over, you can just remove the `venv` folder, and all the downloaded packages are gone!
       
 
-3. Install 
+3. Install. By specifying the `-r requirements.txt` you are telling `pip` to install all the packages specified in the `requirements.txt` file. Since you have already activated your `virtualenv` these packages will now be in your environment. 
 
-        pip install .
+        pip install -r requirements.txt
 
-4. run tests
+4. Run tests. This will ensure that things are working correctly.
 
         pytest test/*.py
 
