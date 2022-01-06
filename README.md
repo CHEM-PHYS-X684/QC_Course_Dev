@@ -1,4 +1,7 @@
-### Installation
+# CHEM/PHYS 3684 Setup 
+Download and install data for course modules
+
+## Installation
 
 1. Install `python`
 
