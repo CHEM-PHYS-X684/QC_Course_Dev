@@ -25,7 +25,8 @@ Download and install data for course modules
     There are two different approaches used for creating and maintaining project-specific environments:
     1.  Anaconda: https://docs.conda.io/en/latest/
     2.  VirtualEnv: https://virtualenv.pypa.io/en/latest/index.html
-    
+   
+    Read more here: https://github.com/CHEM-PHYS-X684/QC_Course_Dev/blob/fb30bd96575c3ddc5411ac4a5d3d2cd8ee9f40ee/topics/virtual_env.md 
 
 
     Either can work, but for this class we will use virtualenv. Install `virtualenv` by typing:
